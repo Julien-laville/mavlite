@@ -28,11 +28,11 @@ void loop() {
   while(Serial.available() > 0) {
     serialBytes = Serial.read();
      if(mavlink_parse_char(MAVLINK_COMM_0, serialBytes, &msg, &status)) {
-     
+       Serial.println((char*)&msg);
      }
 
     
-    Serial.println(serialBytes);
+    
   }
   
   
